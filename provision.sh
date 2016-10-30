@@ -12,7 +12,7 @@ rm -rf /var/lib/apt/lists/*
 
 # Build and install lit
 git clone --depth=1 http://llvm.org/git/llvm.git
-cp llvm/utils/lit /usr/local/bin/llvm-lit
+cp -R llvm/utils/lit /usr/local/bin/llvm-lit
 cp lit /usr/local/bin/lit # containted in this repo, forwards to lit utility
 
 # Build and install FileCheck
@@ -23,3 +23,11 @@ make FileCheck
 cp bin/FileCheck /usr/local/bin/FileCheck
 cd ../..
 rm -rf llvm
+
+# Test (this leads to non-zero exit code and will ruin your current build)
+# echo "JAVA:"
+# java -version
+# echo "FILECHECK:"
+# FileCheck
+# echo "LIT":
+# lit
