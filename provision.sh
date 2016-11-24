@@ -6,7 +6,7 @@ apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys EEA14886
 apt-get update
 echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true" | debconf-set-selections
 
-apt-get install -y --no-install-recommends build-essential git cmake python maven oracle-java8-installer
+apt-get install -y --no-install-recommends make ant build-essential git cmake python maven oracle-java8-installer
 
 
 # Build and install lit
@@ -24,7 +24,7 @@ cd ../..
 rm -rf llvm
 
 # cleanup
-apt-get purge -y build-essential git cmake
+apt-get purge -y cmake
 apt-get autoremove -y
 apt-get clean -y
 rm -rf /var/lib/apt/lists/*

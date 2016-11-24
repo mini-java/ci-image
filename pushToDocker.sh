@@ -1,2 +1,2 @@
 docker login
-docker push florianloch/minijavac-ci-image
+docker push florianloch/minijavac-ci-image:latest
