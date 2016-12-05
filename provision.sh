@@ -13,15 +13,14 @@ apt-get update
 apt-get install -y --no-install-recommends make ant build-essential cmake python python3 maven oracle-java8-installer
 apt-get install -y git # adding --no-install-recommends causes ca certs to be not installed, resulting in tls error when accessing github
 
-mkdir -p /mj/deps/
-cd /mj/deps/
-git clone https://github.com/MatzeB/libfirm.git
-git clone https://github.com/MatzeB/jFirm.git
+git clone https://github.com/mini-java/minijavac.git /mj-tmp
+cd /mj-tmp
+./build
 
-make -C ./libfirm/ clean
-ant -buildfile ./jFirm/build.xml
+cp /mj-tmp/deps/libfirm/build/debug/libfirm.so /libfirm.so
 
 # cleanup
+rm -rf /mj-tmp
 apt-get purge -y cmake
 apt-get autoremove -y
 apt-get clean -y
