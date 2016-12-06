@@ -10,7 +10,7 @@ echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true" | 
 
 apt-get update
 
-apt-get install -y --no-install-recommends make ant build-essential cmake python python3 maven oracle-java8-installer
+apt-get install -y --no-install-recommends make ant build-essential python python3 maven oracle-java8-installer
 apt-get install -y git # adding --no-install-recommends causes ca certs to be not installed, resulting in tls error when accessing github
 
 git clone https://github.com/mini-java/minijavac.git /mj-tmp

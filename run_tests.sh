@@ -15,4 +15,4 @@ git clone https://github.com/mini-java/mjtest.git
 cd mjtest
 
 # And run it
-MJ_RUN="/mjc/run" ./mjt.py all
+MJ_RUN="/mjc/run" ./mjt.py "$@"
